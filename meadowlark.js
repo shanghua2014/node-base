@@ -1,33 +1,33 @@
 let express = require('express');
-let app = express();
+var exphbs  = require('express-handlebars');
 
+var app = express();
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 // 指定端口
-app.set('port', process.env.PORT || 3000);
+app.listen(3000);
 
 // 制定路由
 app.get('/', (req, res)=> {
-    res.type('text/plain');
-    res.send('Meadowlark Travel');
-})
-app.get('/about*', (req, res)=> {
-    res.type('text/plain');
-    res.send('About Meadowlark Travel');
-})
+    res.render('home');
+});
+app.get('/about', (req, res)=> {
+    res.render('about')
+});
 
 // 定制404页面
 app.use((req, res)=> {
-    res.type('text/plain');
     res.status(404);
-    res.send('404 - Not Find');
+    res.render('404');
 });
 
 // 定制500页面
 app.use((req, res)=> {
     console.error(err.stack);
-    res.type('text/plain');
     res.status(500);
-    res.send('500 - Service Error');
+    res.render('500');
 });
 
 app.listen(app.get('port'), () => {
