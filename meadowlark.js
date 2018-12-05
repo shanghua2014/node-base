@@ -1,5 +1,6 @@
 let express = require('express');
 let exphbs  = require('express-handlebars');
+let fortune = require('./lib/fortune');
 
 let app = express();
 
@@ -12,22 +13,12 @@ app.listen(3000);
 // 中间件
 app.use(express.static(__dirname + '/public'));
 
-let fortunes = [
-    '剑阶从者',
-    '枪阶从者',
-    '术阶从者',
-    '狂阶从者',
-    '弓阶从者'
-]
-
 // 制定路由
 app.get('/', (req, res)=> {
     res.render('home');
 });
 app.get('/about', (req, res)=> {
-    let randFortune = 
-        fortunes[Math.floor(Math.random() * fortunes.length)];
-    res.render('about', {fortune:randFortune});
+    res.render('about', {fortune: fortune.getFortune()});
 });
 
 // 定制404页面
