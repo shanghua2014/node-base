@@ -1,3 +1,13 @@
+## 5.6页面测试
+```sh
+$npm install mocha --save-dev
+```
+测试需要一个assert(或expect)函数。但浏览器没有，所以我们需要安装Chai断方库：
+```sh
+$npm install chai --save-dev
+```
+[测试链接-加上test参数即可]http://localhost:3000/about?test=1
+
 ## 4.6Node模块
 导出/导入自定义模块
 
