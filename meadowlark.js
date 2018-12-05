@@ -9,6 +9,9 @@ app.set('view engine', 'handlebars');
 // 指定端口
 app.listen(3000);
 
+// 中间件
+app.use(express.static(__dirname + '/public'));
+
 // 制定路由
 app.get('/', (req, res)=> {
     res.render('home');
