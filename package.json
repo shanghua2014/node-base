@@ -1,0 +1,24 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "meadowlark.js",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.16.4",
+    "express4-handlebars": "^0.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanghua2014/node-base.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shanghua2014/node-base/issues"
+  },
+  "homepage": "https://github.com/shanghua2014/node-base#readme"
+}
