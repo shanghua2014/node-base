@@ -2,7 +2,7 @@
 ```sh
 $npm install mocha --save-dev
 ```
-测试需要一个assert(或expect)函数。但浏览器没有，所以我们需要安装Chai断方库：
+测试需要一个assert(或expect)函数。但浏览器没有，所以我们需要安装Chai断言库：
 ```sh
 $npm install chai --save-dev
 ```
